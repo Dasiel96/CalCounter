@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:id="@+id/layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/caloryCount"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/init_text"
+            android:textSize="30sp" />
+
+        <LinearLayout
+            android:id="@+id/inputFields"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <AutoCompleteTextView
+                android:id="@+id/foodField"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:hint="@string/food_name" />
+
+            <EditText
+                android:id="@+id/calField"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:ems="10"
+                android:hint="@string/number_of_calories"
+                android:inputType="number"
+                android:autofillHints="" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/numberOfInput"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <ImageButton
+                android:id="@+id/minus"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:contentDescription="@string/minus_discript"
+                android:onClick="subtractCount"
+                app:srcCompat="@drawable/ic_minus" />
+
+            <EditText
+                android:id="@+id/inputCount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:autofillHints=""
+                android:ems="10"
+                android:gravity="center"
+                android:hint="@string/number_input"
+                android:inputType="number"
+                android:textSize="24sp" />
+
+            <ImageButton
+                android:id="@+id/plus"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:contentDescription="@string/plus_discript"
+                android:onClick="addCount"
+                app:srcCompat="@drawable/ic_plus" />
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/add"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="addItem"
+            android:text="@string/add" />
+
+        <Button
+            android:id="@+id/reset"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/reset" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/foodList"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
