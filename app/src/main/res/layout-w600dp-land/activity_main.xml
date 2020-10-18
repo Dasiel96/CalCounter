@@ -152,7 +152,8 @@
                     android:layout_weight="1"
                     android:contentDescription="@string/minus_discript"
                     android:onClick="subtractCount"
-                    app:srcCompat="@drawable/ic_minus" />
+                    app:srcCompat="@drawable/ic_minus"
+                    />
 
                 <EditText
                     android:id="@+id/inputCount"
